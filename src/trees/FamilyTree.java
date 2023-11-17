@@ -43,7 +43,7 @@ public class FamilyTree
         TreeNode getNodeWithName(String targetName)
         {
             // Does this node have the target name?
-            if (?????)
+            if (this.name.equals(targetName))
                 return this;
                     
             // No, recurse. Check all children of this node.
@@ -51,6 +51,10 @@ public class FamilyTree
             {
                 // If child.getNodeWithName(targetName) returns a non-null node,
                 // then that's the node we're looking for. Return it.
+				TreeNode targetNode = child.getNodeWithName(targetName);
+				if (targetNode != null) {
+					return targetNode;
+				}
             }
             
             // Not found anywhere.
